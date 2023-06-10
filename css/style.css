@@ -657,6 +657,9 @@ svg {
   border-radius: 4px;
 }
 
+.modal-close-lebel {
+}
+
 .backdrop.is-hidden .modal {
   transform: translate(-50%, -50%) scaleY(0);
 }
