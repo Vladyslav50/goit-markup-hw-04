@@ -65,6 +65,8 @@ svg {
 
 .container-in-header {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .container {
@@ -108,6 +110,7 @@ svg {
 
 .header-link {
   padding: 24px 0;
+  flex-wrap: wrap;
 }
 
 .address-list {
