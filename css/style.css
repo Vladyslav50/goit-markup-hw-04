@@ -658,22 +658,39 @@ svg {
 }
 
 .modal-close-lebel {
+  fill: var(--dark-color);
+}
+
+.modal-close:hover .modal-close-lebel,
+.modal-close:focus .modal-close-lebel {
+  fill: var(--white-background-color);
 }
 
 .backdrop.is-hidden .modal {
   transform: translate(-50%, -50%) scaleY(0);
+  transition: fill var(--transicion);
 }
 
-.backdrop .modal-close {
+.modal-close {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 24px;
   height: 24px;
   position: absolute;
   top: 24px;
   right: 24px;
   border-radius: 50%;
-  background: var(--accent-color);
+  background-color: var(--accent-color);
   border: 1px solid rgba(0, 0, 0, 0.1);
   cursor: pointer;
+  transition: background-color var(--transicion), border var(--transicion);
+}
+
+.modal-close:hover,
+.modal-close:focus {
+  background-color: var(--pressed-state-color);
+  border: none;
 }
 
 .is-hidden {
