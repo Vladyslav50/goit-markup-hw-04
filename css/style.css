@@ -308,7 +308,8 @@ svg {
 
 .portfolio-list-modul .link {
   display: block;
-  transition: border var(--transicion), box-shadow var(--transicion);
+  transition: border var(--transicion);
+  transition: box-shadow var(--transicion);
 }
 
 .portfolio-list-modul {
@@ -533,16 +534,14 @@ svg {
   border: 1px solid #e7e9fc;
   border-radius: 4px;
   transition: background-color var(--transicion), color var(--transicion),
-    border var(--transicion);
-  /* виніс окремо... */
-  transition: box-shadow var(--transicion);
+    border-color var(--transicion), box-shadow var(--transicion);
 }
 
 .portfolio-button:hover,
 .portfolio-button:focus {
   background-color: var(--pressed-state-color);
   color: var(--white-background-color);
-  border: none;
+  border-color: var(--pressed-state-color);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
 }
@@ -585,8 +584,7 @@ svg {
   color: var(--subtle-text);
   border: 1px solid var(--subtle-text);
   border-radius: 4px;
-  transition: border-color var(--transicion);
-  transition: color var(--transicion);
+  transition: border-color var(--transicion), color var(--transicion);
 }
 .customers-logo {
   /* fill: currentColor; */
