@@ -116,7 +116,7 @@ svg {
   flex-wrap: wrap;
   /* color: #404bbf; для визначення кольору тексту */
   /* color: var(--pressed-state-color); */
-  /* color: #404bbf; */
+  color: #404bbf;
   transition: color var(--transicion);
 }
 
@@ -321,8 +321,8 @@ svg {
   /* position: relative; */
 }
 
-.portfolio-list-modul:hover .link,
-.portfolio-list-modul:focus .link {
+.portfolio-list-modul .link:hover,
+.portfolio-list-modul .link:focus {
   border: 1px solid #f4f4fd;
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
@@ -533,7 +533,9 @@ svg {
   border: 1px solid #e7e9fc;
   border-radius: 4px;
   transition: background-color var(--transicion), color var(--transicion),
-    border var(--transicion), box-shadow var(--transicion);
+    border var(--transicion);
+  /* виніс окремо... */
+  transition: box-shadow var(--transicion);
 }
 
 .portfolio-button:hover,
@@ -577,7 +579,6 @@ svg {
   display: flex;
   justify-content: center;
   align-items: center;
-
   width: 168px;
   height: 88px;
   padding: 16px 32px;
@@ -588,7 +589,7 @@ svg {
   transition: color var(--transicion);
 }
 .customers-logo {
-  fill: currentColor;
+  /* fill: currentColor; */
   transition: fill var(--transicion);
 }
 
@@ -596,12 +597,12 @@ svg {
 .customers-link:focus {
   border-color: var(--pressed-state-color);
   /* При фокусі на посилання, в класі заданий стиль color: #404bbf; для зміни кольору фону при кліку на посилання */
-  color: var(--modal-overlay-color);
+  color: var(--pressed-state-color);
 }
 
 .customers-link:hover .customers-logo,
 .customers-link:focus .customers-logo {
-  fill: var(--pressed-state-color);
+  /* fill: var(--pressed-state-color); */
 }
 
 /*!--Section Soc Links-- */
