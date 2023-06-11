@@ -11,7 +11,7 @@
   --hero-background-color: #2e2f42;
   --modal-background-color: #fcfcfc;
   --white-background-color: #ffffff;
-  --transicion: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transicion: 2500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .link {
@@ -61,6 +61,9 @@ svg {
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid #e7e9fc;
+  /* для визначення тіні для елемента */
+  box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
 .container-in-header {
@@ -75,7 +78,7 @@ svg {
   margin: 0 auto;
   padding-right: 15px;
   padding-left: 15px;
-  /* outline: 2px solid red; */
+  outline: 2px solid red;
 }
 
 .header-nav {
@@ -101,7 +104,7 @@ svg {
   content: "";
   position: absolute;
   left: 0;
-  bottom: 4px;
+  bottom: -1px;
   width: 100%;
   height: 4px;
   border-radius: 2px;
@@ -111,6 +114,9 @@ svg {
 .header-link {
   padding: 24px 0;
   flex-wrap: wrap;
+  /* color: #404bbf; для визначення кольору тексту */
+  color: var(--pressed-state-color);
+  /* transition: color var(--transicion); */
 }
 
 .address-list {
@@ -240,7 +246,7 @@ svg {
 }
 
 .member-info {
-  padding: 32px 16px;
+  padding: 32px 0;
 }
 
 .member-info-titel {
@@ -309,7 +315,17 @@ svg {
   /* position: relative; */
 }
 
-.portfolio-list-modul:hover .portfolio-cover-blok {
+.portfolio-list-modul:hover,
+.portfolio-list-modul:focus {
+  border: 1px solid #f4f4fd;
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+}
+
+/* Ковер Блок */
+
+.portfolio-list-modul:hover .portfolio-cover-blok,
+.portfolio-list-modul:focus .portfolio-cover-blok {
   transform: translate(0);
 }
 
@@ -339,13 +355,6 @@ svg {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--light_color);
-}
-
-.portfolio-list-modul:hover,
-.portfolio-list-modul:focus {
-  border: 1px solid #f4f4fd;
-  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
-    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
 .portfolio-text-do {
@@ -396,6 +405,9 @@ svg {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--text-color);
+  /* color: #404bbf; для визначення кольору тексту */
+  /* color: var(--pressed-state-color); */
+  transition: color var(--transicion);
 }
 
 .header-contakt:hover,
@@ -413,9 +425,11 @@ svg {
   background-repeat: no-repeat;
   max-width: 1440px;
   margin: 0 auto;
-  /* background-position: center; */
-  /* background-size: cover; */
-  text-align: center;
+  /* background-position: center; для вирівнювання фонового зображення відносно його власної ширини та висоти */
+  background-position: center;
+  /* background-size: cover; для позиціонування зображення на всю площу фону елемента */
+  background-size: cover;
+  /* text-align: center; */
 }
 
 .hero-titel {
@@ -518,7 +532,7 @@ svg {
 .portfolio-button:focus {
   background-color: var(--pressed-state-color);
   color: var(--white-background-color);
-  border: 1px solid transparent;
+  border: none;
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
 }
@@ -552,13 +566,17 @@ svg {
 .link {
 }
 .customers-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   width: 168px;
   height: 88px;
   padding: 16px 32px;
   color: var(--subtle-text);
   border: 1px solid var(--subtle-text);
   border-radius: 4px;
-  transition: border var(--transicion);
+  transition: border-color var(--transicion);
 }
 .customers-logo {
   fill: currentColor;
@@ -567,7 +585,9 @@ svg {
 
 .customers-link:hover,
 .customers-link:focus {
-  border: 1px solid var(--pressed-state-color);
+  border-color: var(--pressed-state-color);
+  /* При фокусі на посилання, в класі заданий стиль color: #404bbf; для зміни кольору фону при кліку на посилання */
+  color: var(--modal-overlay-color);
 }
 
 .customers-link:hover .customers-logo,
@@ -579,8 +599,14 @@ svg {
 
 .container-footer {
   display: flex;
-  align-items: flex-start;
-  gap: 120px;
+  /* align-items: flex-start; */
+  /* align-items: baseline, що встановлює вирівнювання елементів у поперечному напрямку вздовж головної осі контейнера відносно базової лінії тексту першого рядка кожного елемента */
+  align-items: baseline;
+  /* gap: 120px; */
+}
+
+.container-footer-logo {
+  margin-right: 120px;
 }
 
 .soc-link-blok {
@@ -588,6 +614,10 @@ svg {
 .soc-link-titel {
   color: var(--white-background-color);
   margin-bottom: 16px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
 }
 .soc-link-list {
   display: flex;
@@ -631,6 +661,15 @@ svg {
   background-color: var(--pressed-state-color);
 }
 
+.soc-link-list .team {
+  gap: 24px;
+  /* flex-wrap: wrap; */
+}
+
+.soc-logo-pic-team {
+  fill: var(--light_color);
+}
+
 .backdrop {
   position: fixed;
   top: 0;
@@ -659,6 +698,7 @@ svg {
 
 .modal-close-lebel {
   fill: var(--dark-color);
+  transition: fill var(--transicion);
 }
 
 .modal-close:hover .modal-close-lebel,
@@ -668,11 +708,12 @@ svg {
 
 .backdrop.is-hidden .modal {
   transform: translate(-50%, -50%) scaleY(0);
-  transition: fill var(--transicion);
+  /* transition: fill var(--transicion); */
 }
 
 .modal-close {
   display: flex;
+  padding: 0;
   justify-content: center;
   align-items: center;
   width: 24px;
