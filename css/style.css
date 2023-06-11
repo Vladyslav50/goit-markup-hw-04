@@ -115,8 +115,9 @@ svg {
   padding: 24px 0;
   flex-wrap: wrap;
   /* color: #404bbf; для визначення кольору тексту */
-  color: var(--pressed-state-color);
-  /* transition: color var(--transicion); */
+  /* color: var(--pressed-state-color); */
+  /* color: #404bbf; */
+  transition: color var(--transicion);
 }
 
 .address-list {
@@ -305,18 +306,23 @@ svg {
   padding-bottom: 120px;
 }
 
+.portfolio-list-modul .link {
+  display: block;
+  transition: border var(--transicion), box-shadow var(--transicion);
+}
+
 .portfolio-list-modul {
   /*width: calc((100%-24px * 2) / 3);*/
   /*width: 360px;*/
   display: block;
   /* background-color: red; */
   width: calc((100% - 48px) / 3);
-  transition: border var(--transicion), box-shadow var(--transicion);
+
   /* position: relative; */
 }
 
-.portfolio-list-modul:hover,
-.portfolio-list-modul:focus {
+.portfolio-list-modul:hover .link,
+.portfolio-list-modul:focus .link {
   border: 1px solid #f4f4fd;
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
@@ -324,9 +330,9 @@ svg {
 
 /* Ковер Блок */
 
-.portfolio-list-modul:hover .portfolio-cover-blok,
-.portfolio-list-modul:focus .portfolio-cover-blok {
-  transform: translate(0);
+.portfolio-list-modul .link:hover .portfolio-cover-text,
+.portfolio-list-modul .link:focus .portfolio-cover-text {
+  transform: translateY(0);
 }
 
 .portfolio-cover {
@@ -337,6 +343,16 @@ svg {
 }
 
 .portfolio-cover-blok {
+}
+
+.portfolio-cover-text {
+  display: block;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: var(--light_color);
+  /* repit */
   background-color: var(--primary-brand-color);
   padding: 40px 32px;
   position: absolute;
@@ -347,14 +363,6 @@ svg {
   transform: translateY(100%);
   /* зробимо анимацію! */
   transition: transform var(--transicion);
-}
-
-.portfolio-cover-text {
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: 0.02em;
-  color: var(--light_color);
 }
 
 .portfolio-text-do {
@@ -453,8 +461,8 @@ svg {
   border-radius: 4px;
   border: none;
   padding: 16px 32px;
-  transition: background-color var(--transicion),
-    boxbox-shadow var(--transicion);
+  transition: background-color var(--transicion);
+  transition: boxbox-shadow var(--transicion);
 }
 
 .hero-button:hover,
@@ -577,6 +585,7 @@ svg {
   border: 1px solid var(--subtle-text);
   border-radius: 4px;
   transition: border-color var(--transicion);
+  transition: color var(--transicion);
 }
 .customers-logo {
   fill: currentColor;
@@ -652,6 +661,13 @@ svg {
   justify-content: center;
 }
 
+/* Вмістили в контейнері */
+
+.soc-link-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .list-section-for .soc-link-list {
   justify-content: center;
 }
@@ -661,13 +677,9 @@ svg {
   background-color: var(--pressed-state-color);
 }
 
-.soc-link-list .team {
+.member-info .soc-link-list {
   gap: 24px;
   /* flex-wrap: wrap; */
-}
-
-.soc-logo-pic-team {
-  fill: var(--light_color);
 }
 
 .backdrop {
