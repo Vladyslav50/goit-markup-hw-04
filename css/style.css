@@ -11,7 +11,7 @@
   --hero-background-color: #2e2f42;
   --modal-background-color: #fcfcfc;
   --white-background-color: #ffffff;
-  --transicion: 2500ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transicion: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .link {
