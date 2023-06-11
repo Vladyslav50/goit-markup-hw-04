@@ -462,7 +462,7 @@ svg {
   border-radius: 4px;
   border: none;
   padding: 16px 32px;
-  transition: background-color var(--transicion);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: boxbox-shadow var(--transicion);
 }
 
