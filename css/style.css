@@ -96,10 +96,13 @@ svg {
   /*margin-left: 76px;*/
 }
 
+.header-link.current {
+  color: #404bbf;
+}
+
 .current {
   position: relative;
   /* "У першому пункті меню у посилання в класі заданий стиль color: #404BBF; для визначення кольору тексту" */
-  color: #404bbf;
 }
 
 .current::after {
@@ -110,6 +113,7 @@ svg {
   width: 100%;
   height: 4px;
   border-radius: 2px;
+  /* колір вказав тут */
   background-color: var(--pressed-state-color);
 }
 
@@ -385,12 +389,9 @@ svg {
 }
 
 .header-link {
-  padding: 24px 0;
-  flex-wrap: wrap;
   /* color: #404bbf; для визначення кольору тексту */
   /* color: var(--pressed-state-color); */
   /* color: #404bbf; */
-  /* transition: color var(--transicion); */
 }
 
 .header-link {
@@ -399,6 +400,9 @@ svg {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--dark-color);
+  padding: 24px 0;
+  flex-wrap: wrap;
+  transition: color var(--transicion);
 }
 
 .header-link:hover,
